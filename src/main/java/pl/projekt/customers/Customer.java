@@ -1,7 +1,13 @@
-package projekt.customers;
+package pl.projekt.customers;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "customers")
 public class Customer {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
    private String firstName;
    private String lastName;
    private String email;

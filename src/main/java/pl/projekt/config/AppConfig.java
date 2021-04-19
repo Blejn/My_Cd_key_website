@@ -1,4 +1,4 @@
-package projekt.config;
+package pl.projekt.config;
 
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
@@ -23,22 +23,25 @@ import javax.persistence.EntityManagerFactory;
 import java.util.Locale;
 
 @Configuration
+@ComponentScan(basePackages = "pl.projekt")
 @EnableWebMvc
-@ComponentScan(basePackages = "projekt")
-@EnableJpaRepositories(basePackages = "projekt")
+@EnableJpaRepositories(basePackages = "pl.projekt")
 @EnableTransactionManagement
 public class AppConfig implements WebMvcConfigurer {
+
     @Bean(name = "entityOrderCd")
     public LocalEntityManagerFactoryBean entityManagerFactoryBean() {
         LocalEntityManagerFactoryBean entityManagerFactoryBean = new LocalEntityManagerFactoryBean();
-        entityManagerFactoryBean.setPersistenceUnitName("entityOrderCdPersistenceUnit");
+        entityManagerFactoryBean.setPersistenceUnitName("cdstorePersistenceUnit");
         return entityManagerFactoryBean;
     }
+
     @Bean
     public JpaTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
-        return new JpaTransactionManager();
+        return new JpaTransactionManager(entityManagerFactory);
 
     }
+
     @Bean
     public ViewResolver viewResolver() {
         InternalResourceViewResolver viewResolver =
@@ -47,23 +50,27 @@ public class AppConfig implements WebMvcConfigurer {
         viewResolver.setSuffix(".jsp");
         return viewResolver;
     }
+
     @Override
     public void configureDefaultServletHandling(
             DefaultServletHandlerConfigurer configurer) {
         configurer.enable();
     }
-    @Bean(name="localeResolver")
+
+    @Bean(name = "localeResolver")
     public LocaleContextResolver getLocaleContextResolver() {
         SessionLocaleResolver localeResolver = new SessionLocaleResolver();
-        localeResolver.setDefaultLocale(new Locale("pl","PL"));
+        localeResolver.setDefaultLocale(new Locale("pl", "PL"));
         return localeResolver;
     }
+
     @Bean
     public Validator validator() {
         LocalValidatorFactoryBean localValidatorFactoryBean = new LocalValidatorFactoryBean();
         localValidatorFactoryBean.setValidationMessageSource(messageSource());
         return localValidatorFactoryBean;
     }
+
     @Bean
     public MessageSource messageSource() {
         ReloadableResourceBundleMessageSource messageSource
@@ -72,5 +79,9 @@ public class AppConfig implements WebMvcConfigurer {
         messageSource.setBasename("classpath:messages");
         messageSource.setDefaultEncoding("UTF-8");
         return messageSource;
+
+
     }
+
+
 }
