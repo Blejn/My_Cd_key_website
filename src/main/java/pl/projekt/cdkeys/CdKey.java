@@ -1,5 +1,8 @@
 package pl.projekt.cdkeys;
 
+import pl.projekt.author.Author;
+import pl.projekt.customers.Customer;
+
 import javax.persistence.*;
 
 @Entity
@@ -8,6 +11,31 @@ public class CdKey {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+
+
+    @ManyToOne
+    private Customer customer;
+
+
+    @ManyToOne
+    private Author author;
+//------------------------------------------ do CUSTOMERA I AUTHORA GET I SET
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
+    }
+//----------------------------------------------------------------------------
     private String title;
 
     public CdKey() {

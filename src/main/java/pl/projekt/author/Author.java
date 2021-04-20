@@ -19,6 +19,14 @@ public class Author {
 
     }
 
+    public String getName_artist() {
+        return name_artist;
+    }
+
+    public void setName_artist(String name_artist) {
+        this.name_artist = name_artist;
+    }
+
     public Long getId() {
         return id;
     }

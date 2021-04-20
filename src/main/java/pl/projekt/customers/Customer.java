@@ -1,6 +1,10 @@
 package pl.projekt.customers;
 
+import pl.projekt.cdkeys.CdKey;
+
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "customers")
@@ -8,6 +12,13 @@ public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+
+
+
+    @OneToMany(mappedBy ="customer")
+    private List<CdKey> cdKeys= new ArrayList<>();
+
+
 @Column(name = "firstName",length = 100,nullable = false)
    private String firstName;
     @Column(name = "lastName",length = 100,nullable = false)

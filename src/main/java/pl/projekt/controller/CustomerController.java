@@ -10,7 +10,7 @@ import pl.projekt.customers.CustomerDao;
 import javax.persistence.Column;
 
 @Controller
-@RequestMapping("/custom")
+@RequestMapping("/customer")
 public class CustomerController {
     private  final CustomerDao customerDao;
     public  CustomerController(CustomerDao customerDao){
