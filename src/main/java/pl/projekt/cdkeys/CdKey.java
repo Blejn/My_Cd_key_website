@@ -61,4 +61,14 @@ public class CdKey {
     public void setTitle(String title) {
         this.title = title;
     }
+
+    @Override
+    public String toString() {
+        return "CdKey{" +
+                " id= " + id +
+                ",  customer= " + customer +
+                ",  author= " + author +
+                ",  title=' " + title + '\'' +
+                '}';
+    }
 }

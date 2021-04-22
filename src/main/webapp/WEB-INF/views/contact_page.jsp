@@ -16,7 +16,8 @@
 </head>
 <body>
 <%@include file="header.jsp" %>
+Numer telefonu:693******
+email:blejntypie@gmail.com
 <%@include file="footer.jsp" %>
-
 </body>
 </html>

@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -16,39 +18,47 @@
 </head>
 <body>
 <%@include file="header.jsp" %>
-<form  method="post">
-    <label for="name">imię: </label>
-    <input type="text" id="name" placeholder="podaj imię"/>
+<form:form method="post" modelAttribute="customers">
     <br>
-    <label for="lastName">nazwisko: </label>
-    <input type="text" id="lastName" placeholder="podaj nazwisko"/>
+    Imię:
     <br>
-    <label for="voivodeship">Województwo: </label>
-    <input type="text" id="voivodeship" placeholder="podaj województwo"/>
+    <form:input path="firstName"/>
     <br>
+    Nazwisko:
+    <br>
+    <form:input path="lastName"/>
+    <br>
+    Województwo:
+    <br>
+    <form:input path="voivodeship"/>
+    <br>
+    Miasto:
+    <br>
+    <form:input path="city"/>
+    <br>
+    Ulica(nazwa i numer)
+    <br>
+    <form:input path="street"/>
+    <br>
+    Numer telefonu:
+    <br>
+    <form:input path="number"/>
+    <br>
+    Kod pocztowy:
+    <br>
+    <form:input path="postal_code"/>
+    <br>
+    Email:
+    <br>
+    <form:input path="email"/>
 
-    <label for="city">Miasto: </label>
-    <input type="text" id="city" placeholder="podaj miasto"/>
-    <br>
 
-
-    <label for="street">Nazwa ulicy z numerem: </label>
-    <input type="text" id="street" placeholder="ulica"/>
     <br>
-    <label for="numberstreet">Nr domu/lokalu: </label>
-    <input type="number" id="numberstreet" placeholder="podaj numer"/>
-    <br>
-    <label for="postal_code">Kod pocztowy: </label>
-    <input type="text" id="postal_code" placeholder="podaj kod pocztowy"/>
-    <br>
-
-    <label for="email">email: </label>
-    <input type="text" id="email" placeholder="podaj email"/>
-    <br>
-
-
     <input type="submit" value="Wyślij"/>
-</form>
+
+</form:form>
+
+
 <%@include file="footer.jsp" %>
 </body>
 </html>
