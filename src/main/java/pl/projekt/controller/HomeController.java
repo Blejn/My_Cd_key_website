@@ -18,20 +18,15 @@ public class HomeController {
 
     @GetMapping("/description")
     public String Description() {
-        return "desription";
+        return "description";
     }
-
-
 
     @GetMapping("/contact_page")
     public String Contact_Page() {
         return "contact_page";
     }
 
-    @GetMapping("/paymentmethod_page")
-    public String Payment_Page() {
-        return "paymentmethod_page";
-    }
+
 
 
 }

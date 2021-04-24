@@ -1,6 +1,9 @@
 body {
     background-color: antiquewhite;
 }
+.navbar-link{
+    color: chartreuse;
+}
 
 .header-table {
     background-color: darkgray;

@@ -1,4 +1,4 @@
-package pl.projekt.author;
+package pl.projekt.customers;
 
 import javax.persistence.*;
 

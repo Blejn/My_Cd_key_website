@@ -5,16 +5,16 @@
     <title>Title</title>
 </head>
 <body>
-<%@include file="header.jsp " %>
-<form>
-    <label for="login">Login: </label>
-    <input type="text" id="login" placeholder="podaj login"/>
-    <br>
-    <label for="password">nazwisko: </label>
-    <input type="text" id="password" placeholder="podaj hasło"/>
-    <br>
-    <input type="submit" value="Wyślij"/>
-</form>
-<%@include file="footer.jsp " %>
+<%@include file="header.jsp" %>
+<br>
+Nazwa użytkownika:
+<br>
+<form:input path="nick"/>
+<br>
+Haslo:
+<br>
+<form:input path="password"/>
+<br>
+<%@include file="footer.jsp" %>
 </body>
 </html>

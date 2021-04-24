@@ -1,7 +1,7 @@
 package pl.projekt.cdkeys;
 
 import org.springframework.stereotype.Repository;
-import pl.projekt.author.Author;
+import pl.projekt.customers.CdKey;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

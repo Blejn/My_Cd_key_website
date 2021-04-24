@@ -11,8 +11,10 @@
     <title>Title</title>
 </head>
 <body>
-<%@include file="header.jsp " %>
 
-<%@include file="footer.jsp " %>
+
+Strona Admin posiada możliwość dodawnia twórców oraz płyt:
+<a class="navbar-link" href="<c:url value="/admin_artist"/>">Dodaj artyste </a>
+
 </body>
 </html>

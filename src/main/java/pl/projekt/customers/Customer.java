@@ -1,8 +1,10 @@
 package pl.projekt.customers;
 
-import pl.projekt.cdkeys.CdKey;
-
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,24 +20,33 @@ public class Customer {
     @OneToMany(mappedBy ="customer")
     private List<CdKey> cdKeys= new ArrayList<>();
 
-
+@NotNull
 @Column(name = "firstName",length = 100,nullable = false)
+@Size(min=2,max = 50,message = "niepoprawne imię")
    private String firstName;
     @Column(name = "lastName",length = 100,nullable = false)
+    @Size(min=2,max = 50)
    private String lastName;
+    @NotNull
 @Column(name = "email",length = 255,nullable = false)
+    @NotNull
    private String email;
 @Column(name = "voivodeship",length = 100,nullable = false)
+@NotNull
    private  String voivodeship;
 @Column(name = "city",length = 100,nullable = false)
+@NotNull
    private String city;
 @Column(name = "street",length = 100,nullable = false)
+@NotNull
    private String street;
 
-
+     @NotNull
     @Column(name = "numberphone",length = 50,nullable = false)
+    @NotNull
     private int number;
     @Column(name = "postalCode",length = 100,nullable = false)
+    @NotNull
    private int postal_code;
 
    public Customer(){

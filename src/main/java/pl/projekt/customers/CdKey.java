@@ -1,6 +1,6 @@
-package pl.projekt.cdkeys;
+package pl.projekt.customers;
 
-import pl.projekt.author.Author;
+import pl.projekt.customers.Author;
 import pl.projekt.customers.Customer;
 
 import javax.persistence.*;

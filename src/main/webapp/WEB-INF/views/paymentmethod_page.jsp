@@ -16,6 +16,7 @@
 </head>
 <body>
 <%@include file="header.jsp" %>
+Wybierz metodę płatności:
 <%@include file="footer.jsp" %>
 </body>
 </html>

@@ -9,7 +9,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalEntityManagerFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.springframework.validation.Validator;
+
+
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 import org.springframework.web.servlet.LocaleContextResolver;
 import org.springframework.web.servlet.ViewResolver;
@@ -20,19 +21,20 @@ import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import javax.persistence.EntityManagerFactory;
+import javax.validation.Validator;
 import java.util.Locale;
 
 @Configuration
 @ComponentScan(basePackages = "pl.projekt")
 @EnableWebMvc
-@EnableJpaRepositories(basePackages = "pl.projekt")
+@EnableJpaRepositories(basePackages = "pl.projekt.repository")
 @EnableTransactionManagement
 public class AppConfig implements WebMvcConfigurer {
 
-    @Bean(name = "entityOrderCd")
-    public LocalEntityManagerFactoryBean entityManagerFactoryBean() {
+    @Bean
+    public LocalEntityManagerFactoryBean entityManagerFactory() {
         LocalEntityManagerFactoryBean entityManagerFactoryBean = new LocalEntityManagerFactoryBean();
-        entityManagerFactoryBean.setPersistenceUnitName("cdstorePersistenceUnit");
+        entityManagerFactoryBean.setPersistenceUnitName("cdStorePersistenceUnit");
         return entityManagerFactoryBean;
     }
 
@@ -67,7 +69,7 @@ public class AppConfig implements WebMvcConfigurer {
     @Bean
     public Validator validator() {
         LocalValidatorFactoryBean localValidatorFactoryBean = new LocalValidatorFactoryBean();
-        localValidatorFactoryBean.setValidationMessageSource(messageSource());
+          localValidatorFactoryBean.setValidationMessageSource(messageSource());
         return localValidatorFactoryBean;
     }
 

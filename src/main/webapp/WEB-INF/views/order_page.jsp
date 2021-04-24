@@ -16,41 +16,49 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <link rel="stylesheet" href="/style.css">
 </head>
-<body>
+<body style="background-color: cornflowerblue">
 <%@include file="header.jsp" %>
 <form:form method="post" modelAttribute="customers">
     <br>
     Imię:
     <br>
     <form:input path="firstName"/>
+    <form:errors path="firstName" cssClass="error"/>
     <br>
     Nazwisko:
     <br>
     <form:input path="lastName"/>
+    <form:errors path="lastName" cssClass="error"/>
     <br>
     Województwo:
     <br>
-    <form:input path="voivodeship"/>
+    <form:select items="${voivodeships}" path="voivodeship"/>
+    <form:errors path="voivodeship" cssClass="error"/>
     <br>
     Miasto:
     <br>
     <form:input path="city"/>
+    <form:errors path="city" cssClass="error"/>
     <br>
     Ulica(nazwa i numer)
     <br>
     <form:input path="street"/>
+    <form:errors path="street" cssClass="error"/>
     <br>
     Numer telefonu:
     <br>
     <form:input path="number"/>
+    <form:errors path="number" cssClass="error"/>
     <br>
     Kod pocztowy:
     <br>
     <form:input path="postal_code"/>
+    <form:errors path="postal_code" cssClass="error"/>
     <br>
     Email:
     <br>
     <form:input path="email"/>
+    <form:errors path="email" cssClass="error"/>
 
 
     <br>

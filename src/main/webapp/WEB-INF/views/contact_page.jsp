@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -14,7 +15,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <link rel="stylesheet" href="/style.css">
 </head>
-<body>
+<body style="background-color: cornflowerblue">
 <%@include file="header.jsp" %>
 Numer telefonu:693******
 email:blejntypie@gmail.com

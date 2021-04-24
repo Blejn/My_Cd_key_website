@@ -1,7 +1,7 @@
 package pl.projekt.author;
 
 import org.springframework.stereotype.Repository;
-import pl.projekt.customers.Customer;
+import pl.projekt.customers.Author;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -14,7 +14,7 @@ public class AuthorDao {
     @PersistenceContext
     private EntityManager entityManager;
 
-    public void saveCustomer(Author author) {
+    public void saveAuthor(Author author) {
         entityManager.persist(author);
     }
 
