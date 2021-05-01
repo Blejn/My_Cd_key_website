@@ -41,9 +41,10 @@ public class AppConfig implements WebMvcConfigurer {
     @Bean
     public JpaTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
         return new JpaTransactionManager(entityManagerFactory);
+        //baza danych
 
     }
-
+// uzywamy metody konfiguracyjne
     @Bean
     public ViewResolver viewResolver() {
         InternalResourceViewResolver viewResolver =
@@ -57,6 +58,7 @@ public class AppConfig implements WebMvcConfigurer {
     public void configureDefaultServletHandling(
             DefaultServletHandlerConfigurer configurer) {
         configurer.enable();
+
     }
 
     @Bean(name = "localeResolver")
@@ -69,10 +71,10 @@ public class AppConfig implements WebMvcConfigurer {
     @Bean
     public Validator validator() {
         LocalValidatorFactoryBean localValidatorFactoryBean = new LocalValidatorFactoryBean();
-          localValidatorFactoryBean.setValidationMessageSource(messageSource());
+         // localValidatorFactoryBean.setValidationMessageSource(messageSource());
         return localValidatorFactoryBean;
     }
-
+/*
     @Bean
     public MessageSource messageSource() {
         ReloadableResourceBundleMessageSource messageSource
@@ -85,5 +87,5 @@ public class AppConfig implements WebMvcConfigurer {
 
     }
 
-
+*/
 }

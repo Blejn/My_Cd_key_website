@@ -1,26 +1,36 @@
 package pl.projekt.dto;
 
 import javax.persistence.Column;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 public class CustomerDto {
     @NotNull
+    @Size(min=2,max = 50,message = "niepoprawne imię")
     private String firstName;
     @NotNull
+    @Size(min=2,max = 50,message = "Niepoprawne nazwisko")
     private String lastName;
-    @NotNull
+    @NotNull(message ="Wartość jest pusta" )
+    @Size(min=2,max = 50,message = "Prosze wpisac email")
+    @Email(message = "Brak znaku @ do prawidłowego wpisania emailu")
     private String email;
-    @NotNull
+    @Size(min=2,max = 50,message = "Wybierz województwo")
+    @NotNull(message ="Wartość jest pusta" )
     private  String voivodeship;
-    @NotNull
+    @NotNull(message ="Wartość jest pusta" )
+    @Size(min=2,max = 50,message = "Prosze wpisac miasto")
     private String city;
-    @NotNull
+    @Size(min=2,max = 50,message = "Prosze wpisac ulice")
+    @NotNull(message ="Wartość jest pusta" )
     private String street;
-    @NotNull
+
+    @NotNull(message ="Wartość jest pusta" )
     private int number;
-    @NotNull
-    private int postal_code;
+    @Size(min=2,max = 50,message = "Prosze wpisac kod pocztowy")
+    @NotNull(message ="Wartość jest pusta" )
+    private String postal_code;
 
     public String getFirstName() {
         return firstName;
@@ -78,11 +88,11 @@ public class CustomerDto {
         this.number = number;
     }
 
-    public int getPostal_code() {
+    public String getPostal_code() {
         return postal_code;
     }
 
-    public void setPostal_code(int postal_code) {
+    public void setPostal_code(String postal_code) {
         this.postal_code = postal_code;
     }
 }

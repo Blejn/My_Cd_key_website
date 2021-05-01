@@ -26,5 +26,7 @@ public class AppInitializer implements WebApplicationInitializer {
             fr.setInitParameter("encoding", "UTF-8");
             fr.setInitParameter("forceEncoding", "true");
             fr.addMappingForUrlPatterns(null, true, "/*");
+
+    //implementuje interfej WebApllication.. pierwsza czesc tworzy kontekst aplikacji, register rejestrujes, kontekst servletów, tworzymy i ustawiamy dispatcher servlet(pelni role zarzadcy),ustawia adres przechowywania dla apki,pozostale to filtr ktory jest odpwiiedzialny za prawidlowe kodowanie
     }
 }

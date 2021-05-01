@@ -25,7 +25,7 @@ import java.util.stream.Collectors;
 @RequestMapping("order_page")
 public class CustomerController {
     private final CustomerService customerService;
-@Autowired
+
     private final Validator validator;
 
     public CustomerController(CustomerService customerService, Validator validator) {
@@ -34,23 +34,24 @@ public class CustomerController {
     }
 
 
-    @GetMapping
+    @GetMapping("/order_page")
     public ModelAndView Order_Page() {
         return new ModelAndView("order_page", Map.of(
-                "customers", new CustomerDto()
+                "customer", new CustomerDto()
         ));
         // model.addAttribute("customers", new Customer());
         //return "order_page";
     }
 
-    @PostMapping//("/order_page")
-    @ResponseBody
-    public String postForm(@Valid CustomerDto customer, BindingResult bindingResult) {
+    @PostMapping("/order_page")
+
+    public String postForm(@ModelAttribute("customer")@Valid CustomerDto customer, BindingResult bindingResult) {
        if(bindingResult.hasErrors()){
            return "order_page";
        }
             customerService.add(customer);
-            return customerService.findAll().toString();
+           return  "redirect:/order_page/order_page";
+           // return customerService.findAll().toString();
 
 
     }

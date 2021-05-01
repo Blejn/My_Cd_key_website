@@ -18,52 +18,69 @@
 </head>
 <body style="background-color: cornflowerblue">
 <%@include file="header.jsp" %>
-<form:form method="post" modelAttribute="customers">
+<form:form method="post" modelAttribute="customer">
     <br>
+    <p>
     Imię:
     <br>
     <form:input path="firstName"/>
-    <form:errors path="firstName" cssClass="error"/>
+    <form:errors path="firstName" cssClass="error" element="p"/>
     <br>
+    </p>
+    <p>
     Nazwisko:
     <br>
     <form:input path="lastName"/>
-    <form:errors path="lastName" cssClass="error"/>
+    <form:errors path="lastName" cssClass="error" element="p"/>
     <br>
+    </p>
+    <p>
     Województwo:
     <br>
     <form:select items="${voivodeships}" path="voivodeship"/>
-    <form:errors path="voivodeship" cssClass="error"/>
+    <form:errors path="voivodeship" cssClass="error" element="p"/>
     <br>
+    </p>
+    <p>
     Miasto:
     <br>
     <form:input path="city"/>
-    <form:errors path="city" cssClass="error"/>
+    <form:errors path="city" cssClass="error" element="p"/>
     <br>
+    </p>
+    <p>
     Ulica(nazwa i numer)
     <br>
+
     <form:input path="street"/>
-    <form:errors path="street" cssClass="error"/>
+    <form:errors path="street" cssClass="error" element="p"/>
     <br>
+    </p>
+    <p>
     Numer telefonu:
     <br>
     <form:input path="number"/>
-    <form:errors path="number" cssClass="error"/>
+    <form:errors path="number" cssClass="error" element="p"/>
     <br>
+    </p>
+    <p>
     Kod pocztowy:
     <br>
     <form:input path="postal_code"/>
-    <form:errors path="postal_code" cssClass="error"/>
+    <form:errors path="postal_code" cssClass="error" element="p"/>
     <br>
+    </p>
+    <p>
     Email:
     <br>
     <form:input path="email"/>
-    <form:errors path="email" cssClass="error"/>
+    <form:errors path="email" cssClass="error" element="p"/>
 
-
+    </p>
+    <p>
     <br>
     <input type="submit" value="Wyślij"/>
-
+    </p>
 </form:form>
 
 

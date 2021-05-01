@@ -20,34 +20,35 @@ public class Customer {
     @OneToMany(mappedBy ="customer")
     private List<CdKey> cdKeys= new ArrayList<>();
 
-@NotNull
+//@NotNull
 @Column(name = "firstName",length = 100,nullable = false)
-@Size(min=2,max = 50,message = "niepoprawne imię")
+//@Size(min=2,max = 50,message = "niepoprawne imię")
    private String firstName;
     @Column(name = "lastName",length = 100,nullable = false)
-    @Size(min=2,max = 50)
+ //   @Size(min=2,max = 50,message = "Niepoprawne nazwisko")
    private String lastName;
-    @NotNull
+  //  @NotNull(message ="Wartość jest pusta" )
+  //  @Email(message = "Brak znaku @ do prawidłowego wpisania emailu")
 @Column(name = "email",length = 255,nullable = false)
-    @NotNull
+  //  @NotNull(message ="Wartość jest pusta" )
    private String email;
 @Column(name = "voivodeship",length = 100,nullable = false)
-@NotNull
+//@NotNull(message ="Wartość jest pusta" )
    private  String voivodeship;
 @Column(name = "city",length = 100,nullable = false)
-@NotNull
+//@NotNull(message ="Wartość jest pusta" )
    private String city;
 @Column(name = "street",length = 100,nullable = false)
-@NotNull
+//@NotNull(message ="Wartość jest pusta" )
    private String street;
 
-     @NotNull
+     //@NotNull(message ="Wartość jest pusta" )
     @Column(name = "numberphone",length = 50,nullable = false)
-    @NotNull
+   // @NotNull(message ="Wartość jest pusta" )
     private int number;
     @Column(name = "postalCode",length = 100,nullable = false)
-    @NotNull
-   private int postal_code;
+   // @NotNull(message ="Wartość jest pusta" )
+   private String postal_code;
 
    public Customer(){
 
@@ -57,7 +58,7 @@ public class Customer {
         this.firstName = firstName;
     }
 
-    public Customer(String firstName, String lastName, String email, String voivodeship, String city, String street, int number, int postal_code) {
+    public Customer(String firstName, String lastName, String email, String voivodeship, String city, String street, int number, String postal_code) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -131,11 +132,11 @@ public class Customer {
         this.number = number;
     }
 
-    public int getPostal_code() {
+    public String getPostal_code() {
         return postal_code;
     }
 
-    public void setPostal_code(int postal_code) {
+    public void setPostal_code(String postal_code) {
         this.postal_code = postal_code;
     }
 }

@@ -14,7 +14,7 @@
             <a class="navbar-link" href="<c:url value="/main_page"/>">Strona główna</a>
         </td>
         <td>
-            <a class="navbar-link" href="<c:url value="/order_page"/>">Zamów płytę</a>
+            <a class="navbar-link" href="<c:url value="/order_page/order_page"/>">Zamów płytę</a>
         </td>
 
         <td>

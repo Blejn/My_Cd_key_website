@@ -25,13 +25,15 @@ public class CustomerService {
         newCustomer.setEmail(customerDto.getEmail());
         newCustomer.setNumber(customerDto.getNumber());
         newCustomer.setStreet(customerDto.getStreet());
+        newCustomer.setPostal_code(customerDto.getPostal_code());
 
         customerRepository.save(newCustomer);
     }
-
+//String email,String voivodeship,String city,String street, int number, String postal_code
     public List<CustomerReadDto> findAll(){
       return   customerRepository.findAll().stream()
-                .map(entity->new CustomerReadDto(entity.getFirstName(),entity.getLastName()) )
+                .map(entity->new CustomerReadDto(entity.getFirstName(),entity.getLastName(),entity.getEmail()
+                ,entity.getVoivodeship(),entity.getCity(),entity.getStreet(),entity.getNumber(),entity.getPostal_code()) )
                 .collect(Collectors.toList());
     }
 
